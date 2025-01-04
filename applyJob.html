@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application form</title>
+    <link rel="stylesheet" href="applyJob.css" />
+  </head>
+  <body>
+    <div id="form-container">
+      <h1>Application form</h1>
+      <div class="name">
+        <label><strong>Name</strong></label>
+        <textarea
+          type="text"
+          id="name"
+          placeholder="Enter your full name"
+          required
+        ></textarea>
+      </div>
+      <div class="application">
+        <label><strong>Your Application</strong></label>
+        <textarea
+          type="text"
+          id="application"
+          placeholder="Example: I would like to apply for this job as I am equipped with all the skills required to complete the task in the given time. Would you be able to provide me with more details?"
+          style="
+            height: 200px;
+            width: 500px;
+            text-align: start;
+            word-wrap: break-word;
+          " required
+        ></textarea>
+      </div>
+      <div>
+        <label><strong>Proposed Budget (in INR)
+        </strong></label>
+        <textarea
+          type="text"
+          id="budget"
+          placeholder="Enter your proposed budget" required
+        ></textarea>
+      </div>
+      <div>
+        <label><strong>Proposed Deadline</strong></label>
+        <textarea type="text" id="deadline" placeholder="DD/MM/YYYY" required></textarea>
+      </div>
+      <div>
+        <label><strong>Email ID</strong></label>
+        <textarea type="text" id="email" placeholder="Enter your email id"required></textarea>
+      </div>
+      <button id="submit">Submit application</button>
+      
+    </div>
+   
+    <script type="module" src="applyJob.js"></script>
+  </body>
+</html>

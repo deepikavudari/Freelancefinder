@@ -1,0 +1,69 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8faff; 
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+#jobDetailsContainer {
+    background-color: #ffffff; 
+    border: 1px solid #e3e3e3; 
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+
+#jobDetailsContainer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2);
+}
+
+
+#jobDetailsContainer h3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+#jobDetailsContainer p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin: 10px 0;
+}
+
+
+#jobDetailsContainer strong {
+    color: #333;
+}
+
+button{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#007BFF ;
+    color: white;
+    height: 35px;
+    width: 100px;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2);
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color:#f8faff;
+}

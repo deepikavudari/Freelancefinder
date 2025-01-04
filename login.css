@@ -1,0 +1,111 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h1, h2 {
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #0071c5;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+
+.login-credentials, .user-input {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #0071c5;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0071c5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+p {
+    text-align: center;
+    font-size: 0.9rem;
+    margin: 20px 0;
+    color: #555555;
+}
+
+p a {
+    color: #0071c5;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+p span{
+    text-align: center;
+}
+
+  

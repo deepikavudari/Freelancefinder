@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Job</title>
+    
+    <link rel="stylesheet" href="PostJob.css" />
+  </head>
+  
+  <body>
+    <h1 class="heading">Create a Job</h1>
+    
+    <form id="PostJob">
+      <div class="job-credentials">
+        <label for="JobTitle">JobTitle</label>
+        <input
+          type="text"
+          id="JobTitle"
+          name="JobTitle"
+          placeholder="Enter your Job Title"
+          required
+        />
+      </div>
+      <div class="job-credentials">
+        <label for="skills">Skills Required</label>
+        <input
+          type="text"
+          id="skills"
+          name="skills"
+          placeholder="Enter the skills required"
+          required
+        >
+      </div>
+      <div class="job-credentials">
+        <label for="description">Description</label>
+        <input
+          style="
+            width: 550px;
+            height: 150px;
+            padding: 10px;
+            text-align: start;
+            word-wrap: break-word;
+          "
+          id="description"
+          name="description"
+          placeholder="Specify the details of the job and expectations of the role in as much detail as possible"
+          required
+        >
+      </div>
+      <div class="job-credentials">
+        <label for="budget">Budget</label>
+        <input
+          type="text"
+          id="budget"
+          name="budget"
+          placeholder="Enter the budget in INR"
+          required
+        />
+      </div>
+      <div class="job-credentials">
+        <label for="deadline">Deadline</label>
+        <input
+          type="text"
+          id="deadline"
+          name="deadline"
+          placeholder="DD-MM-YY"
+          required
+        />
+      </div>
+    
+    <button id="submit">Create Job</button>
+    <script type="module" src="PostJob.js" defer></script>
+</form>
+  </body>
+</html>
