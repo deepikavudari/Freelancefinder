@@ -55,7 +55,6 @@ function getPostedJobs(uid){
         if(snapshot.exists()){
             const data = snapshot.val();
             
-            let output = "";
             for(const key in data){
                 const job = data[key];
                 output += document.querySelector(".jobs").innerHTML= `
@@ -78,7 +77,3 @@ function getPostedJobs(uid){
     });
 }
 
-function getAppliedjobs(uid){
-    const appliedJob = ref(database, "applyJob");
-
-}

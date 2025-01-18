@@ -19,7 +19,6 @@ dataRef.once("value")
         if (snapshot.exists()) {
             const data = snapshot.val();
             const container = document.querySelector("#dataContainer");
-            let output = "";
             
             for (const uid in data) {
                 const jobs = data[uid];
