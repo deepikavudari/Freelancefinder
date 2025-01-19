@@ -54,6 +54,7 @@ const firebaseConfig = {
   const displayApplicants = (applicants) => {
     console.log(applicants);
     const container = document.querySelector("#applicant-info");  
+      container = "";
     for (const applicantID in applicants) {
         const applicant = applicants[applicantID];
         const applicantInfo = document.createElement("div");
