@@ -54,7 +54,7 @@ function getPostedJobs(uid){
     get(jobInfo).then((snapshot)=>{
         if(snapshot.exists()){
             const data = snapshot.val();
-            
+            let output = "";
             for(const key in data){
                 const job = data[key];
                 output += document.querySelector(".jobs").innerHTML= `
