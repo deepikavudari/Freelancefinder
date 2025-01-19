@@ -34,9 +34,9 @@ const jobId = urlParams.get("id");
         const application = document.querySelector("#application").value;
         const budget = document.querySelector("#budget").value;
         const deadline = document.querySelector("#deadline").value;const email = document.querySelector("#email").value;
-        saveApplication(jobId, fullName, application, budget, deadline, email);
         
-        alert("Your application has been submitted successfully!");
+            alert("Your application has been submitted successfully!");
+        
          });
 
     
@@ -57,13 +57,15 @@ get(jobRef).then((snapshot) =>{
         if (jobCreatorUid){
             const applyJobDB = ref(database, `postJob/${jobCreatorUid}/${jobId}/applicants`)
             const newInfo = push(applyJobDB);
-            set(newInfo, {
+             set(newInfo, {
                 fullName: fullName,
                 Application: application,
                 Budget: budget,
                 Deadline: deadline,
                 Email: email,
             })
+              return true;
+
         }
         
     }

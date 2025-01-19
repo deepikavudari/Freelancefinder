@@ -26,7 +26,7 @@ onAuthStateChanged(auth, (user)=>{
     if(user){
         submitBtn.disabled = false;
         const uid = user.uid;
-    document.querySelector("#PostJob").addEventListener("submit", (event) => {
+    document.querySelector("#PostJob").addEventListener("submit", async function (event)  {
         event.preventDefault();
         
             const JobTitle = document.querySelector("#JobTitle").value;
@@ -36,8 +36,11 @@ onAuthStateChanged(auth, (user)=>{
             const deadline = document.querySelector("#deadline").value;
         
             if (JobTitle && skills && description && budget && deadline) {
-                saveData(uid, JobTitle, skills, description, budget, deadline);
-                alert("Job posted successfully!");
+                let assurance = await saveData(uid, JobTitle, skills, description, budget, deadline);
+                if(assurance){
+                    alert("Job posted successfully!");
+                    location.href = "user.html";
+                }
             } else {
                 alert("Fill all the fields!");
             }
@@ -49,16 +52,18 @@ onAuthStateChanged(auth, (user)=>{
 
 
 
-const saveData = (uid, JobTitle, skills, description, budget, deadline) => {
+const saveData = async (uid, JobTitle, skills, description, budget, deadline) => {
     const postJobDB = ref(database, `postJob/${uid}`);
     const jobRef = push(postJobDB);
-    set(jobRef, {
+    await set(jobRef, {
         JobTitle: JobTitle,
         Skills: skills,
         Description: description,
         Budget: budget,
         Deadline: deadline,
     });
+    return true;
+    
 };
 
 
