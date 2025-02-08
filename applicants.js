@@ -18,7 +18,7 @@ const firebaseConfig = {
   const urlParams = new URLSearchParams(window.location.search);
   const jobId = urlParams.get("id");
 // console.log(jobId)
-
+console.log(jobId);
   //initialize firebase
    const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
@@ -33,6 +33,7 @@ const firebaseConfig = {
   })
 
   const fetchApplicantData = (uid)=>{
+    console.log(uid);
     const jobRef = ref(database, `postJob/${uid}/${jobId}/applicants` )
     get(jobRef).then((snapshot)=>{
         if(snapshot.exists()){

@@ -28,47 +28,57 @@ const jobId = urlParams.get("id");
  console.log(jobId);
   
 
-        document.querySelector("#submit").addEventListener("click",(event)=>{
+        document.querySelector("#submit").addEventListener("click",async function(event){
             event.preventDefault();
         const fullName = document.querySelector("#name").value;
         const application = document.querySelector("#application").value;
         const budget = document.querySelector("#budget").value;
-        const deadline = document.querySelector("#deadline").value;const email = document.querySelector("#email").value;
-        
+        const deadline = document.querySelector("#deadline").value;
+        const email = document.querySelector("#email").value;
+        const assurance = await saveApplication(jobId,fullName,application,budget,deadline,email);
+        console.log(assurance);
+        if(assurance){
             alert("Your application has been submitted successfully!");
-        
+            window.location.href = "availableJobs.html";
+        }
+            
          });
 
     
-const saveApplication = (jobId, fullName, application, budget, deadline, email)=>{
-    const jobRef = ref(database, 'postJob');
-get(jobRef).then((snapshot) =>{
-    if(snapshot.exists()){
-        const jobs = snapshot.val();
-        let jobCreatorUid = null;
-
-        for(const uid in jobs){
-            if(jobs[uid][jobId]){
-                jobCreatorUid = uid;
-                console.log(jobCreatorUid);
-                break;
-            }
-        }
-        if (jobCreatorUid){
-            const applyJobDB = ref(database, `postJob/${jobCreatorUid}/${jobId}/applicants`)
-            const newInfo = push(applyJobDB);
-             set(newInfo, {
-                fullName: fullName,
-                Application: application,
-                Budget: budget,
-                Deadline: deadline,
-                Email: email,
-            })
-              return true;
-
-        }
+ async function  saveApplication(jobId, fullName, application, budget, deadline, email){
+    try{
+        const jobRef = ref(database, 'postJob');
+        const snapshot = await get(jobRef);
+            if(snapshot.exists()){
+                const jobs = snapshot.val();
+                let jobCreatorUid = null;
+         
+                for(const uid in jobs){
+                    if(jobs[uid][jobId]){
+                        jobCreatorUid = uid;
+                        console.log(jobCreatorUid);
+                        break;
+                    }
+                }
+                if (jobCreatorUid){
+                    const applyJobDB = ref(database, `postJob/${jobCreatorUid}/${jobId}/applicants`)
+                    const newInfo = push(applyJobDB);
+                    await set(newInfo, {
+                        fullName: fullName,
+                        Application: application,
+                        Budget: budget,
+                        Deadline: deadline,
+                        Email: email,
+                    })
         
+                }
+                
+            }
+            return true; 
+        
+    } catch(error){
+        console.log(error);
     }
+
+        }
     
-})
-}
